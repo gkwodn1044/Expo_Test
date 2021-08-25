@@ -12,7 +12,9 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import InquiryPostScreen from '../screens/InquiryPostScreen';
+//import InquiryListScreen from '../screens/InquiryListScreen';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, InquiryPostParamList, InquiryListParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -33,6 +35,20 @@ export default function BottomTabNavigator() {
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Post"
+        component={InquiryPostNavigator}
+        options={{
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="List"
+        component={InquiryListNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -74,5 +90,33 @@ function TabTwoNavigator() {
         options={{ headerTitle: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const InquiryPostStack = createStackNavigator<InquiryPostParamList>();
+
+function InquiryPostNavigator() {
+  return (
+    <InquiryPostStack.Navigator>
+      <InquiryPostStack.Screen
+        name="InquiryPostScreen"
+        component={InquiryPostScreen}
+        options={{ headerTitle: 'Inquiry Post' }}
+      />
+    </InquiryPostStack.Navigator>
+  );
+}
+
+const InquiryListStack = createStackNavigator<InquiryListParamList>();
+
+function InquiryListNavigator() {
+  return (
+    <InquiryListStack.Navigator>
+      <InquiryListStack.Screen
+        name="InquiryListScreen"
+        component={InquiryListScreen}
+        options={{ headerTitle: 'Inquiry List' }}
+      />
+    </InquiryListStack.Navigator>
   );
 }

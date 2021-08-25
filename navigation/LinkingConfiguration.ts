@@ -22,6 +22,16 @@ export default {
               TabTwoScreen: 'two',
             },
           },
+          InquiryPost: {
+            screens: {
+              InquiryPostScreen: 'iq_post',
+            },
+          },
+          InquiryList: {
+            screens: {
+              InquiryListScreen: 'iq_list',
+            },
+          },
         },
       },
       NotFound: '*',

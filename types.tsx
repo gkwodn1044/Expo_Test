@@ -11,6 +11,8 @@ export type RootStackParamList = {
 export type BottomTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
+  Post: undefined;
+  List: undefined;
 };
 
 export type TabOneParamList = {
@@ -19,4 +21,12 @@ export type TabOneParamList = {
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
+};
+
+export type InquiryPostParamList = {
+  InquiryPostScreen: undefined;
+};
+
+export type InquiryListParamList = {
+  InquiryListScreen: undefined;
 };
